@@ -20,6 +20,12 @@ namespace Domain.Entities
 
         public int RequesterId { get; set; }
 
-        public int AssignedToId { get; set; }
+        public User Requester { get; set; } = null!;
+
+        public int? AssignedToId { get; set; }
+
+        public User? AssignedTo { get; set; }
+
+        public ICollection<Comment> Comments { get; set; } = new List<Comment>();
     }
 }
